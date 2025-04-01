@@ -1,0 +1,222 @@
+body{
+	margin: 0 auto;
+	font: normal 18px / 22px 'Lato', Helvetica, Arial, sans-serif !important;
+}
+
+/* Slider wrapper */
+
+.review-hero {
+	position: relative;
+	background-image: url('./img/image_03.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	text-align: center;
+	padding: 4rem 2rem 6rem;
+	justify-content: center;
+	height: auto;
+	overflow: hidden;
+  }
+.header-wrapper{
+	text-align: center;
+}
+
+.header-wrapper h1 {
+	position: relative;
+	display: inline-block; /* So the ::after is relative to the h2’s width */
+	margin-bottom: 2rem;
+	color: white;
+	position: relative;
+	z-index: 2;
+	color: whitesmoke;
+	font: 900 46px / 46px 'Lato', Helvetica, Arial, sans-serif;
+}
+
+.header-wrapper h1::after{
+	content: "";
+	display: block;
+	width: 65px;
+	height: 8px;
+	background: #9c0e04;
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.slider {
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	z-index: 2;
+  }  
+
+.slick-list {
+	overflow: hidden; /* allow logos to show inside padding */
+	box-sizing: border-box;
+}
+
+/* Slide container */
+.slide {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: auto;
+	padding: 0 50px;
+	box-sizing: border-box;
+	overflow: visible;
+}
+
+.slider-container {
+	position: relative;
+	background-color: transparent;
+	overflow: hidden;
+  }
+  
+  /* The white curve cutout */
+  .bottom-curve {
+	position: absolute;
+	bottom: -80px; /* move the curve downward */
+	left: 50%;
+	transform: translateX(-50%);
+	width: 120%;
+	height: 125px;
+	background-color: white;
+	border-radius: 50%;
+	z-index: 2;
+  }
+  
+
+/* Inactive dots */
+.slick-dots li button:before {
+	color: white;         /* base dot color */
+	opacity: 0.3;
+  }
+  
+  /* Active dot */
+  .slick-dots li.slick-active button:before {
+	color: crimson;      /* active dot color */
+	opacity: 1;
+  }
+  
+
+.review {
+	background-color: white;
+	padding: 1.5em;
+	border-radius: 1em;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+  }
+  
+  .review .date-star{
+	display:flex;
+	flex-direction:row;
+	justify-content: space-between;
+	margin-bottom: 2em;
+  }
+  .review .author {
+	font-weight: bold;
+	text-align: left;
+	font-size: 22px;
+  }
+  
+  .review .rating {
+	color: gold;
+	font-size: 14px;
+  }
+  
+  .review .text {
+	font-style: italic;
+  }
+  
+  .review img {
+	height: 33px;
+	width: 33px;
+	border-radius: 50%;
+  }
+
+  .review-img {
+	display: flex;
+	justify-content: end;
+  }
+
+  .read-toggle {
+	background: none;
+	border: none;
+	color: #007bff;
+	cursor: pointer;
+	font-size: 0.9em;
+	margin-left: 0.5em;
+  }
+  
+  .read-toggle:hover {
+	text-decoration: underline;
+  }
+  
+
+/* Arrows */
+.slick-prev, .slick-next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50px;
+	height: 50px;
+	z-index: 8;
+	border-radius: 3px;
+	background: rgb(156, 14, 4) !important;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Positioning */
+.slick-prev {
+	left: 20px;
+}
+
+.slick-next {
+	right: 20px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+	display: none !important;
+}
+
+@media (min-width: 1024px) {
+	/* Your styles for desktop and larger go here */
+  
+	.review-hero {
+	  padding: 6rem 2rem 10rem;
+	}
+  
+	.slider {
+	  margin: 0 auto;
+	  padding: 0 90px;
+	}
+  
+	.bottom-curve {
+	  bottom: -100px;
+	  height: 150px;
+	  width: 120%;
+	}
+  }
+
+  @media (min-width: 1440px) {
+  
+	.review-hero {
+	  padding: 6rem 2rem 10rem;
+	}
+  
+	.slider {
+	  margin: 0 auto;
+	  padding: 0 10px;
+	}
+
+  }
