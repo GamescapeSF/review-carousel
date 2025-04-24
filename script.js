@@ -85,7 +85,7 @@ async function renderReviews() {
 	try {
 	  const response = await fetch('https://us-central1-review-selector.cloudfunctions.net/googleReviews');
 	  const reviews = await response.json();
-  
+	
 	  slider.innerHTML = ''; // Clear loading or placeholder text
   
 	  if (!reviews.length) {
@@ -97,13 +97,16 @@ async function renderReviews() {
 		const slide = document.createElement('div');
 		const trimmedText = trimText(review.text, 250, 3);
 		const fullText = review.text;
-
+		const date = new Date(review.timestamp).toLocaleString('default',{
+			month:'long',
+			year:'numeric'
+		})
 		slide.className = 'slide';
 		slide.innerHTML = `
 		  <div class="review">
 			<div class="author">${review.author}</div>
 			<div class="date-star">
-				<div class="date">${review.displayDate}</div> 
+				<div class="date">${date}</div> 
 				<div class="rating">${'⭐'.repeat(review.rating)}</div>
 			</div>
 			<div class="text">
